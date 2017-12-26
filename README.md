@@ -91,7 +91,8 @@ StringTransform lowerTransform = strategyFactory.getImplementation("lower");
 StringTransform camelTransform = strategyFactory.getImplementation("camel");
 ```
 
-7. **PRO-TIP**: Add which strategy you want on your request URL:
+# PRO-Tips!
+1. Add which strategy you want on your request URL:
 ```
 @GetMapping(value = "/{strategy:\\w+}", produces = APPLICATION_JSON)
 public ResponseEntity<?> execute(@PathVariable(name = "strategy") String strategy, @RequestParam("s") @Valid @NotEmpty String string) throws IllegalAccessException {
@@ -100,4 +101,16 @@ public ResponseEntity<?> execute(@PathVariable(name = "strategy") String strateg
 	
 	// do the rest of the stuff
 }
+```
+
+2. Kinda, sorta, _"you won't tell the difference"_ use an `enum` as your strategy name:
+```
+public enum StringTransformationTypes {
+	NONE, UPPER, LOWER, CAMEL;
+}
+
+@StringTransformImplementation("UPPER")
+public class UppercaseStringTransformStrategy implements StringTransform { ... }
+
+StringTransform upperTransform = strategyFactory.getImplementation(StringTransformationTypes.UPPER.name());
 ```
