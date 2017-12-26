@@ -8,9 +8,10 @@ import java.lang.annotation.Retention;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.vcmais.proofOfConcept.strategy.strategies.StringTransform;
+
 /**
- * Denotes an Implementation of a Strategy
- * @author rafael
+ * Classes annotated with this are implementations of {@link StringTransform}
  *
  */
 @Qualifier

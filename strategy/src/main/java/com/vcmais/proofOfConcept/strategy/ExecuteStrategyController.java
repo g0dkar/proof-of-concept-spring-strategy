@@ -26,11 +26,7 @@ public class ExecuteStrategyController {
 	
 	@GetMapping(value = "/{strategy:\\w+}", produces = APPLICATION_JSON)
 	public ResponseEntity<StringResponse> get(@PathVariable(name = "strategy") @Valid @NotEmpty String strategy, @RequestParam("s") @Valid @NotEmpty String string) throws IllegalAccessException {
-		
-		// Pega a implementação pelo nome enviado na URL
 		StringTransform transform = strategyFactory.getImplementation(strategy);
-		
-		// E simplesmente chama :)
 		String result = transform.transform(string);
 		
 		StringResponse response = new StringResponse(result);

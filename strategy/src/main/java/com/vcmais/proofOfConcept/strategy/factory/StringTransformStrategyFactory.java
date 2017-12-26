@@ -9,7 +9,6 @@ import com.vcmais.proofOfConcept.strategy.strategies.StringTransform;
 @Component
 @ApplicationScope
 public class StringTransformStrategyFactory extends AnnotatedStrategyFactory<StringTransformImplementation, StringTransform> {
-
 	@Override
 	public Class<StringTransformImplementation> strategyAnnotation() {
 		return StringTransformImplementation.class;
@@ -19,5 +18,4 @@ public class StringTransformStrategyFactory extends AnnotatedStrategyFactory<Str
 	public Class<StringTransform> strategyInterface() {
 		return StringTransform.class;
 	}
-	
 }
