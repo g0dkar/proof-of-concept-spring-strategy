@@ -2,8 +2,14 @@
 
 This project is a Proof-of-Concept project showcasing a most likely better way of implementing the Strategy design pattern using Spring's own dependency injection system to build the concrete strategy *if and only if* and *when* needed.
 
-Basically:
-1. Create a `@Annotation` for your strategy implementations
+# Test it out
+Get the project, run `StrategyApplication.java` and test it out:
+- http://localhost:8080/strategy/upper?s=HaDouKen
+- http://localhost:8080/strategy/lower?s=HaDouKen
+- http://localhost:8080/strategy/camel?s=HaDouKen
+
+# How to use this?
+1. Create an `@Annotation` for your strategy implementations
 
 ```
 /**
