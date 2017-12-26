@@ -88,7 +88,7 @@ StringTransform camelTransform = strategyFactory.getImplementation("camel");
 7. **PRO-TIP**: Add which strategy you want on your request URL:
 ```
 @GetMapping(value = "/{strategy:\\w+}", produces = APPLICATION_JSON)
-public ResponseEntity<StringResponse> execute(@PathVariable(name = "strategy") String strategy, @RequestParam("s") @Valid @NotEmpty String string) throws IllegalAccessException {
+public ResponseEntity<?> execute(@PathVariable(name = "strategy") String strategy, @RequestParam("s") @Valid @NotEmpty String string) throws IllegalAccessException {
 	StringTransform transform = strategyFactory.getImplementation(strategy);
 	String result = transform.transform(string);
 	
