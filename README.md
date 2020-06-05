@@ -1,6 +1,8 @@
-# A better way to implement a Strategy with Spring Boot
+# One to implement a Strategy with Spring Boot
 
-This project is a Proof-of-Concept project showcasing a most likely better way of implementing the Strategy design pattern using Spring's own dependency injection system to build the concrete strategy *if and only if* and *when* needed.
+This project is a Proof-of-Concept project showcasing a way of implementing the Strategy design pattern using Spring's own dependency injection system to build the concrete strategy *if and only if* and *when* needed.
+
+>**Update as of 2020:** My knowledge about Spring Boot has grown and you can simply inject a `List<StrategyInterface>` and have all your strategies implement a `getName()` that you can use to select which to execute. This code is being kept as _one way_ of having the same.
 
 # Test it out
 Get the project, run `StrategyApplication.java` and test it out:
